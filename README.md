@@ -1,33 +1,46 @@
-# Raman Spectra Analysis Pipeline
+# Raman Spectra Analysis Pipeline (MATLAB)
 
-This MATLAB script automates the processing of Raman spectra:
+This repository provides a MATLAB implementation of a digital Raman spectra analysis pipeline, including baseline correction, classification, and visualization. The baseline correction step is based on the adaptive iteratively reweighted penalized least squares (airPLS) algorithm.
 
-1. Despiking  
-2. Savitzky-Golay smoothing  
-3. airPLS baseline correction  
-4. Peak-based classification  
-5. Heatmap of results  
-6. Statistical analysis (mean ± standard deviation)  
-7. High-quality plots  
+## Overview
+The pipeline performs the following steps on Raman spectral data:
+1. Despiking (cosmic ray spike removal)
+2. Savitzky–Golay smoothing (noise reduction)
+3. Baseline correction (airPLS algorithm)
+4. Classification based on peak detection relative to reference background
+5. Outlier filtering (removal of overexposed spectra and statistical filtering)
+6. Visualization (heatmap, spectral plots, mean ± standard deviation)  
 
-### Files Generated:
-- `*_Despiked_Spectra.xlsx`  
-- `*_Smoothed_Spectra.xlsx`  
-- `*_Corrected_Spectra.xlsx`  
-- `*_Classification.xlsx`  
-- `*_Mean_STD_Spectra.xlsx`
+## Requirements
+- MATLAB R2019b or later (older versions may also work)
+- Signal Processing Toolbox
+- Input Raman spectra file in Excel format (.xlsx)
 
-### Requirements:
-- MATLAB R2020b+  
-- Signal Processing Toolbox  
+## Input Format
+The input file must be an Excel sheet with the following structure:
+- Column 1: Raman shift values (in cm⁻¹)
+- Column 2 → N: Intensity values for each spectrum
 
-### How to Use:
-1. Run `raman_analysis_pipeline.m`.
-2. Select an `.xlsx` file with Raman shift in column 1 and spectra in columns 2–101.
-3. Outputs saved in the same folder.
+## Output
+### The pipeline generates the following files in the same directory as the input file:
+- *_Despiked_Spectra.xlsx — spectra after spike removal
+- *_Smoothed_Spectra.xlsx — spectra after Savitzky–Golay smoothing
+- *_Corrected_Spectra.xlsx — spectra after baseline correction (airPLS)
+- *_Classification.xlsx — classification results (0 = negative, 1 = positive)
+- *_Mean_STD_Spectra.xlsx — mean spectrum with standard deviation
+### Plots generated:
+- Heatmap of classification results
+- Original vs corrected spectra
+- Mean spectrum ± 1 standard deviation
 
-### Reference:
-Zhang, Z.-M., Chen, S., & Liang, Y.-Z. (2010). *Baseline correction using adaptive iteratively reweighted penalized least squares*. Analyst, 135(5), 1138–1146.
+## How to Use:
+1. Run `MIM_SERS_Analysis.m`.
+2. When prompted, select the input Excel file.
+3. The processed spectra and classification results will be saved automatically in the same directory.
 
-### License:
-MIT
+## Citation
+If you use this code, please cite:
+- Zhou, Junhu, Xin Qi, and John XJ Zhang. "Controlled Synthesis of Metal-Insulator-Metal Nanoparticles for Enhanced Raman Spectroscopy." Nanoscale (2025). DOI: https://doi.org/10.1039/D5NR03536H
+
+## License:
+This code is distributed for academic and research use.
