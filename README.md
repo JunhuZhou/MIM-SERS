@@ -42,5 +42,4 @@ The input file must be an Excel sheet with the following structure:
 If you use this code, please cite:
 - Zhou, Junhu, Xin Qi, and John XJ Zhang. "Controlled Synthesis of Metal-Insulator-Metal Nanoparticles for Enhanced Raman Spectroscopy." Nanoscale (2025). DOI: https://doi.org/10.1039/D5NR03536H
 
-## License:
-This code is distributed for academic and research use.
+
