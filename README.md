@@ -1,6 +1,6 @@
 # Raman Spectra Analysis Pipeline (MATLAB)
 
-This repository provides a MATLAB implementation of a digital Raman spectra analysis pipeline, including baseline correction, classification, and visualization. The baseline correction step is based on the adaptive iteratively reweighted penalized least squares (airPLS) algorithm. An example of Raman spectra dataset is provided,
+This repository provides a MATLAB implementation of a digital Raman spectra analysis pipeline, including baseline correction, classification, and visualization. The baseline correction step is based on the adaptive iteratively reweighted penalized least squares (airPLS) algorithm. An example of Raman spectra dataset is provided.
 
 ## Overview
 The pipeline performs the following steps on Raman spectral data:
