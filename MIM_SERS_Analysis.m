@@ -17,7 +17,7 @@
 
 clear; clc;
 
-%% 1. Load data
+%% 1. Load data 
 % The Excel file should contain:
 %   Column 1 = Raman shift values (x-axis, in cm^-1)
 %   Columns 2:end = spectral intensities (y-axis) for multiple spectra
